@@ -1,0 +1,16 @@
+<Solution>
+  <Folder Name="/Backend/" />
+  <Folder Name="/Backend/ControllerSync/" />
+  <Folder Name="/Backend/Interface/">
+    <Project Path="ControllerSPSSyncBackend/ControllerSPSSyncBackend.csproj" />
+    <Project Path="ControllerTypes/ControllerTypes.csproj" />
+    <Project Path="IControllerInterfacer/ControllerInterfacer.csproj" />
+  </Folder>
+  <Folder Name="/Backend/SPSSync/" />
+  <Folder Name="/BackEndTest/" />
+  <Folder Name="/FrontEndTest/" />
+  <Folder Name="/Projektmappenelemente/">
+    <File Path="VorschlägeDerKI.txt" />
+  </Folder>
+  <Project Path="PS4Read/PS4Read.csproj" />
+</Solution>

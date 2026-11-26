@@ -1,0 +1,5 @@
+//Periotic timer
+Das ist die ideale Lösung. Mit einem festen 10-ms-Zyklus und einem unveränderlichen Snapshot arbeiten Sie komplett deterministisch, vermeiden Threading-Konflikte beim Auslesen und belasten den Garbage Collector nicht.
+Für einen stabilen 10-ms-Takt unter Windows empfiehlt sich in modernem .NET der PeriodicTimer in einem eigenen Hintergrund-Task (statt System.Timers.Timer oder DispatcherTimer), da er keine überlappenden Aufrufe erzeugt, falls ein SPS-Schreibvorgang doch einmal minimal länger als 10 ms dauert:
+//Dispatch Timer
+Kein UI-Thread (DispatcherTimer): Lassen Sie die SPS-Kommunikation niemals über den UI-Thread von WPF/WinForms laufen. Ein kurzes Hängen der Oberfläche (z. B. Fenster verschieben) blockiert sonst sofort die Steuerung. Nutzen Sie einen eigenen Task / Thread mit ThreadPriority.AboveNormal.
